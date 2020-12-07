@@ -1,0 +1,16 @@
+{
+  "name": "profile-card-component",
+  "version": "1.0.0",
+  "description": "Frontend Mentor Challenge",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "author": "Maria Glynou",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
