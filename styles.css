@@ -12,18 +12,6 @@ body {
     text-align: center;
 }
 
-/* Background circles */
-
-/* background-image: url(/images/bg-pattern-top.svg);
-background-position: left 20% top 124%;
-background-image: url(/images/bg-pattern-bottom.svg);
-background-position: right 20% bottom 124%;
-background-repeat: no-repeat; */
-
-.container{
-    display: flex;
-}
-
 .card{
     display: flex;
     flex-direction:column;
@@ -32,36 +20,49 @@ background-repeat: no-repeat; */
     width: 320px;
     height: 360px;
     background: white;
-    border: 2px;
     border-radius: 15px;
     position: relative;
 }
 
-#card-image-background{
+.card::before, .card::after{
+    content: "";
+    height:1000px;
+    width: 1000px;
+    position: absolute;
+    z-index: -1;
+}
+
+.card::before{
+    background: url(/images/bg-pattern-top.svg) no-repeat;
+    top: -680px;
+    left: -830px;
+}
+
+.card::after{
+    background: url(/images/bg-pattern-bottom.svg) no-repeat;
+    top: 250px;
+    left: 0;
+}
+
+#background{
     background-image: url(/images/bg-pattern-card.svg);
-    width: 100%;
     height: 130px;
-    border: 2px;
     border-radius: 15px 15px 0 0;
 }
 
-#card-image-profile {
-    border: 5px solid white;
-    border-radius:70%;
+.card>img {
     width: auto;
     height: 95px;
+    border: 5px solid white;
+    border-radius:70%;
     position: absolute;
     top: 23%;
     left: 36%;
 }
 
 .card-info {
-    flex-grow: 2;
     margin-top: 80px;
-}
-
-.bold-text {
-    font-weight: 700;
+    flex-grow: 2;
 }
 
 .grey-text {
@@ -69,17 +70,16 @@ background-repeat: no-repeat; */
 }
 
 #city-text {
-    font-size: 0.8em;
     padding-top: 10px;
+    font-size: 0.8em;
 }
 
 .card-stats {
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     border-top: hsla(0, 0%, 59%, 0.288) solid 1px;
 }
-
 
 .stats>.grey-text{
     font-size: 0.55em;
@@ -90,8 +90,7 @@ background-repeat: no-repeat; */
     margin: 4px;
 }
 
-
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
     .card {
         margin-top:12%;
     }
